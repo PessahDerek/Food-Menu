@@ -1,10 +1,17 @@
 import React from 'react'
+import ShowTotal from './ShowTotal';
 import fries from '../images/fries.png';
 import sausage from '../images/sausage.jpeg';
 import fish from '../images/fish.png';
 import soda from '../images/cocacola.png';
 import rice from '../images/rice.png';
 import juice from '../images/juice.png';
+import coffee from '../images/coffee.png'
+import bugher from '../images/bugher.png'
+import chicken from '../images/chicken.webp'
+import beef from '../images/beef.png';
+import { useState } from 'react';
+import data from '../data.json'
 
 const menu = 
     {"fries": fries,
@@ -12,7 +19,12 @@ const menu =
     "fish": fish,
     "soda": soda,
     "rice": rice,
-    "juice": juice}
+    "juice": juice,
+    "coffee": coffee,
+    "bugher": bugher,
+    'chicken': chicken,
+    'beef': beef
+}
 
 
 const foodItemStyle = {
@@ -72,7 +84,28 @@ const formButton = {
     color: "white",
     boxShadow: "2px 2px 8px #0004"
 }
+
+const foodOrdered = []
+const foodOrderedUnit = []
+const foodOrderedPrice = []
+const foodOrderedTotal = []
+var myData = '../data.json'
+
+
 function FoodItem(props) {
+    const [unit, setunit] = useState(0);
+    function total(event){
+        setunit(event.target.value)
+        activate()
+    }
+    function activate(){
+        foodOrdered.push(props.foodName)
+        foodOrderedPrice.push(props.foodPrice)
+        foodOrderedUnit.push(unit)
+        foodOrderedTotal.push((props.foodPrice * unit))
+        data.units += unit
+        console.log(data.units)
+    }
     return (
         <div style={foodItemStyle}>
             <img style={foodImgStyle} src={menu[props.foodImage]}></img>
@@ -81,12 +114,11 @@ function FoodItem(props) {
                 <label htmlFor="price">Price</label>
                 <input style={menuInputStyleAct} disabled type="number" value={props.foodPrice}/>
                 <label htmlFor="quant" >Quantity</label>
-                <input style={menuInputStyleActive} type="number" />
-                <button type='submit' style={formButton}>Add to Tray</button>
+                <input id='btn' style={menuInputStyleActive} type="number" onChange={total} />
+                <button onClick={total} style={formButton} type='button'>Add to Tray</button>
             </form>
         </div>
     )
 }
 
-
-export default FoodItem
+export default FoodItem;
