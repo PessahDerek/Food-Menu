@@ -1,0 +1,42 @@
+/* style for the checkout list item */
+.checkoutList {
+    width: 90%;
+    margin: 5%;
+    height: 30vh;
+    position: relative;
+    background-color: #fdf6f3;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.185);
+}
+.checkoutList button {
+    width: 20vh;
+    height: 4vh;
+    border: 1px red solid;
+    color: red;
+    margin-left: 10%;
+    background-color: transparent;
+}
+.checkoutList form {
+    width: 95%;
+    position: relative;
+    top: 5%;
+    height: 80%;
+}
+.checkoutList form div {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    border-bottom: 1px orangered solid;
+}
+.checkoutList form div label {
+    width: 20%;
+    height: 3.3vmax;
+    line-height: 3.3vmax;
+}
+.checkoutList form div input {
+    width: 70%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}

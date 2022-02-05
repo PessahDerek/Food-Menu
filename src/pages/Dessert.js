@@ -1,5 +1,6 @@
 import React from 'react'
-import FoodItem from '../components/FoodItem'
+import FoodItem from '../components/FoodItem';
+import TrayOrderBtn from '../components/TrayOrderBtn';
 
 const DessertMenu = [
     {name: "Fries", price: 150, image: "fries"},
@@ -10,8 +11,10 @@ const DessertMenu = [
 function Dessert() {
     return (
         <div>
-            {DessertMenu.map(food => <FoodItem key = {food.index} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
+            {DessertMenu.map((food, index) => <FoodItem key = {`${food}${index}`} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
+            <TrayOrderBtn />
         </div>
+        
     )
 }
 

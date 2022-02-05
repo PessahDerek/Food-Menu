@@ -26,7 +26,6 @@ const menu =
     'beef': beef
 }
 
-
 const foodItemStyle = {
     width: "90%",
     height: "25vmax",
@@ -85,26 +84,36 @@ const formButton = {
     boxShadow: "2px 2px 8px #0004"
 }
 
-const foodOrdered = []
-const foodOrderedUnit = []
-const foodOrderedPrice = []
-const foodOrderedTotal = []
-var myData = '../data.json'
-
+const usedIds = []
+function createId(){
+    let min = Math.ceil(1);
+    let max = Math.floor(20);
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
 function FoodItem(props) {
     const [unit, setunit] = useState(0);
     function total(event){
-        setunit(event.target.value)
-        activate()
+        setunit(event.target.value);
+        //activate();
     }
+    
     function activate(){
-        foodOrdered.push(props.foodName)
-        foodOrderedPrice.push(props.foodPrice)
-        foodOrderedUnit.push(unit)
-        foodOrderedTotal.push((props.foodPrice * unit))
-        data.units += unit
-        console.log(data.units)
+        const totalIs = props.foodPrice * unit;
+        const id = createId();
+        if (usedIds.includes(id)){
+            activate();
+        } else {
+            const trayArray = {
+            "food": props.foodName,
+            "price": props.foodPrice,
+            "quantity": unit,
+            "total": totalIs,
+            "id": id,
+            }
+            data.myTray.push(trayArray);
+        }
+        console.log(data.myTray);
     }
     return (
         <div style={foodItemStyle}>
@@ -115,7 +124,7 @@ function FoodItem(props) {
                 <input style={menuInputStyleAct} disabled type="number" value={props.foodPrice}/>
                 <label htmlFor="quant" >Quantity</label>
                 <input id='btn' style={menuInputStyleActive} type="number" onChange={total} />
-                <button onClick={total} style={formButton} type='button'>Add to Tray</button>
+                <button onClick={activate} style={formButton} type='button'>Add to Tray</button>
             </form>
         </div>
     )

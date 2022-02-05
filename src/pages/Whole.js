@@ -1,5 +1,7 @@
 import React from 'react'
-import FoodItem from '../components/FoodItem'
+import FoodItem from '../components/FoodItem';
+import CheckList from '../components/CheckList';
+import TrayOrderBtn from '../components/TrayOrderBtn';
 
 const wholeMenu = [
     {name: 'Fish', price: 300, image: "fish"}, 
@@ -10,8 +12,10 @@ const wholeMenu = [
 function Whole() {
     return (
         <div>
-            {wholeMenu.map(food => <FoodItem key = {food.index} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
+            {wholeMenu.map((food, index) => <FoodItem key = {`${food}${index}`} foodPrice={food.price} foodImage={food.image} />)}
+            <TrayOrderBtn />
         </div>
+
     )
 }
 
