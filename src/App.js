@@ -11,6 +11,7 @@ import TrayOrderBtn from './components/TrayOrderBtn';
 import OrderBtn from './components/OrderBtn';
 
 
+
 function App() {
   const [theBtn, setBtn] = useState(<TrayOrderBtn onclick="order" />)
   return (
@@ -21,17 +22,18 @@ function App() {
             <h2>Welcome to Hajini</h2>
           </div>
           <div className="foodGroups">
-            <a><Link to="">Beverage</Link></a>
-            <a ><Link to="dessert">Dessert</Link></a>
+            <a ><Link to=""><a >Beverage</a></Link></a>
+            <a ><Link to="Dessert"><a >Dessert</a></Link></a>
             <a ><Link to="Whole">Whole Meal</Link></a>
           </div>
+          
         </div>
         
         <Routes>
-          <Route path="" element={<Beverage/>}/>
-          <Route path="Dessert" element={<Dessert />} />
-          <Route path="Whole" element={<Whole/>} />
-          <Route path="Checkout" element={<Checkout />}/>
+          <Route path="/*" element={<Beverage/>}/>
+          <Route path="/Dessert/*" element={<Dessert />} />
+          <Route path="/Whole/*" element={<Whole/>} />
+          <Route path="/Checkout/*" element={<Checkout />}/>
         </Routes>
       </BrowserRouter>
     </div>

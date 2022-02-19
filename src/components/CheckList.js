@@ -1,8 +1,8 @@
 import React from 'react';
 import './componentStyle.css';
+import Data from '../data.json';
 
 function CheckList(props) {
-    
     return <div className="checkoutList">
         <form>
             <div>
@@ -23,7 +23,7 @@ function CheckList(props) {
             </div>
             
         </form>
-        <button type='button'>Remove</button>
+        <button onClick={props.func}  type='button'>Remove</button>
     </div>;
 }
 

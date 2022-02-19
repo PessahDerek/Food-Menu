@@ -1,6 +1,7 @@
 import React from 'react'
 import FoodItem from '../components/FoodItem';
 import TrayOrderBtn from '../components/TrayOrderBtn';
+import OrderBtn from '../components/OrderBtn';
 
 const DessertMenu = [
     {name: "Fries", price: 150, image: "fries"},

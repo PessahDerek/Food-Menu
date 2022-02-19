@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.904968ea.css",
+    "main.js": "/static/js/main.cfce1f6f.js",
+    "static/js/787.1fd46d8f.chunk.js": "/static/js/787.1fd46d8f.chunk.js",
+    "static/media/coffee.png": "/static/media/coffee.fbc522e45d11d92a919e.png",
+    "static/media/bugher.png": "/static/media/bugher.f91ce4f372b77be9f02a.png",
+    "static/media/juice.png": "/static/media/juice.d1cfc51d4eafc52900e0.png",
+    "static/media/rice.png": "/static/media/rice.7f1a20e0c9b2c3de236b.png",
+    "static/media/fish.png": "/static/media/fish.7288db80e5fe3100fe62.png",
+    "static/media/beef.png": "/static/media/beef.b548114264115177fc00.png",
+    "static/media/cocacola.png": "/static/media/cocacola.db1ab6987fca70697bc9.png",
+    "static/media/fries.png": "/static/media/fries.a4f4edde55dbfd807d9d.png",
+    "static/media/chicken.webp": "/static/media/chicken.4bddcdc46711c26500ad.webp",
+    "static/media/Arciform.otf": "/static/media/Arciform.f5e2f8e51501a0f73dfc.otf",
+    "static/media/sausage.jpeg": "/static/media/sausage.4b8eb1c0af80288a0d4c.jpeg",
+    "index.html": "/index.html",
+    "main.904968ea.css.map": "/static/css/main.904968ea.css.map",
+    "main.cfce1f6f.js.map": "/static/js/main.cfce1f6f.js.map",
+    "787.1fd46d8f.chunk.js.map": "/static/js/787.1fd46d8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.904968ea.css",
+    "static/js/main.cfce1f6f.js"
+  ]
+}

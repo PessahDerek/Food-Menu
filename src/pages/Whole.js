@@ -12,7 +12,7 @@ const wholeMenu = [
 function Whole() {
     return (
         <div>
-            {wholeMenu.map((food, index) => <FoodItem key = {`${food}${index}`} foodPrice={food.price} foodImage={food.image} />)}
+            {wholeMenu.map((food, index) => <FoodItem key = {`${food}${index}`} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
             <TrayOrderBtn />
         </div>
 
