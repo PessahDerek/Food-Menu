@@ -13,11 +13,20 @@ function Checkout(props) {
   var [widget, setWidget] = useState(Data.myTray);
 
   const handleDelete=(item)=> {
-    widget.filter((w) => w.id !== item.id)
-  
+    var newList = widget.filter((w) => w['id'] !== item);
+    for (var i = 0; i < Data.myTray.length; i++){
+      if (Data.myTray[i]['id'] == item){
+        console.log('im about to pop', Data.myTray[i]);
+        Data.myTray.pop(Data.myTray[i]);
+      } else {
+        continue;
+      }
+    }
+    console.log('this is', item);
+    setWidget(newList);
   }
   
-  console.log(widget)
+  //console.log(widget)
 
 
   useEffect(() => {
@@ -31,7 +40,7 @@ function Checkout(props) {
   }else {
     return <div className="checkout">
       {widget.map(
-        (item) => <CheckList key={item.id} handleDelete={handleDelete}  food={item['food']} price={item['price']} quant={item['quantity']} />
+        (item) => <CheckList key={item['id']} id={item['id']} handleDelete={handleDelete}  food={item['food']} price={item['price']} quant={item['quantity']} />
       )}
       <OrderBtn />
     </div>;

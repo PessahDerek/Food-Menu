@@ -27,7 +27,7 @@ function CheckList(props) {
         </form>
         <button style={{
             cursor:"pointer"
-        }} onClick={() =>props.handleDelete(props.key)}  type='button'>Remove</button>
+        }} onClick={() =>props.handleDelete(props.id)}  type='button'>Remove</button>
     </div>;
 }
 
