@@ -1,8 +1,10 @@
 import React from 'react';
 import './componentStyle.css';
-import Data from '../data.json';
 
 function CheckList(props) {
+
+
+
     return <div className="checkoutList">
         <form>
             <div>
@@ -23,7 +25,9 @@ function CheckList(props) {
             </div>
             
         </form>
-        <button onClick={props.func}  type='button'>Remove</button>
+        <button style={{
+            cursor:"pointer"
+        }} onClick={() =>props.handleDelete(props.key)}  type='button'>Remove</button>
     </div>;
 }
 
