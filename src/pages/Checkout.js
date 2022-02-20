@@ -40,7 +40,7 @@ function Checkout(props) {
       <h1>Add a Food Item to Your Tray</h1>
     </div>
   }else {
-    return <div className="checkout">
+    return <div className="page">
       {widget.map(
         (item) => <CheckList key={item['id']} id={item['id']} handleDelete={handleDelete}  food={item['food']} price={item['price']} quant={item['quantity']} />
       )}

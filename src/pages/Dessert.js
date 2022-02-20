@@ -11,7 +11,7 @@ const DessertMenu = [
 
 function Dessert() {
     return (
-        <div>
+        <div className="page">
             {DessertMenu.map((food, index) => <FoodItem key = {`${food}${index}`} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
             <TrayOrderBtn />
         </div>

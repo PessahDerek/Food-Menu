@@ -46,15 +46,17 @@
 .foodGroups a:hover {
   color: lightblue;
 }
+.page {
+  height: 77vh;
+  overflow: auto;
+}
 .footer {
   width: 100vw;
-  height: 7%;
+  height: 10%;
   background-color: #FF4500;
   position: fixed;
-  top: 93%;
-  z-index: 150;
-  line-height: 7vh;
-  margin-top: 2%;
+  top: 90%;
+  line-height: 10vh;
 }
 .checkoutBtn {
   width: 40%;

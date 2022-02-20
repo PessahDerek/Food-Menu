@@ -11,7 +11,7 @@ const Bevarages = [
 
 function Beverage() {
     return (
-        <div>
+        <div className="page">
             {Bevarages.map((food, index) => <FoodItem key = {`${food}${index}`} foodName={food.name} foodPrice={food.price} foodImage={food.image} />)}
             <TrayOrderBtn />
         </div>
