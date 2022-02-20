@@ -3,8 +3,6 @@ import './componentStyle.css';
 
 function CheckList(props) {
 
-
-
     return <div className="checkoutList">
         <form>
             <div>
