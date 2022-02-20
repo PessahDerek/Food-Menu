@@ -8,6 +8,7 @@ import BtnImg from './images/tray.png';
 import TotalWidget from './components/ShowTotal';
 import { useState } from "react";
 import TrayOrderBtn from './components/TrayOrderBtn';
+import Payout from './pages/Payout';
 import OrderBtn from './components/OrderBtn';
 
 
@@ -22,9 +23,9 @@ function App() {
             <h2>Welcome to Hajini</h2>
           </div>
           <div className="foodGroups">
-            <a ><Link to=""><a >Beverage</a></Link></a>
-            <a ><Link to="Dessert"><a >Dessert</a></Link></a>
-            <a ><Link to="Whole">Whole Meal</Link></a>
+            <Link to="">Beverage</Link>
+            <Link to="Dessert">Dessert</Link>
+            <Link to="Whole">Whole Meal</Link>
           </div>
           
         </div>
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Dessert/*" element={<Dessert />} />
           <Route path="/Whole/*" element={<Whole/>} />
           <Route path="/Checkout/*" element={<Checkout />}/>
+          <Route path="/Payout/*" element={<Payout />}/>
         </Routes>
       </BrowserRouter>
     </div>

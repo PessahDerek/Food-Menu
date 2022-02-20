@@ -16,22 +16,21 @@ function Checkout(props) {
     var newList = widget.filter((w) => w.id === item);
     for (var i = 0; i < Data.myTray.length; i++){
       if (Data.myTray[i]['id'] === item){
+        var target = Data.myTray.indexOf(Data.myTray[i]);
         console.log('im about to pop', Data.myTray[i]);
-        Data.myTray.pop(Data.myTray[i]);
+        console.log("huh index ", target);
+        if (target === 0){
+          Data.myTray.shift(Data.myTray[i]);
+        } else {
+          Data.myTray.splice(target, target);
+        }
       } else {
         continue;
       }
     }
-    console.log('this is', item);
+    console.log('this is', Data.myTray);
     setWidget(newList);
   }
-  
-  useEffect(() =>{
-
-  })
-  //console.log(widget)
-
-
   useEffect(() => {
     setWidget(Data.myTray)
   },[widget])
