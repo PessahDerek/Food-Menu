@@ -13,11 +13,11 @@ function Checkout(props) {
   var [widget, setWidget] = useState(Data.myTray);
  
   const handleDelete=(item)=> {
-    var newList = widget.filter((w) => w.id === item);
+    var newList = widget.filter((w) => w['id'] !== item);
     for (var i = 0; i < Data.myTray.length; i++){
-      if (Data.myTray[i]['id'] === item){
+      if (Data.myTray[i]['id'] == item){
         console.log('im about to pop', Data.myTray[i]);
-        Data.myTray.pop(Data.myTray[i]);
+        Data.myTray.splice(Data.myTray[i]);
       } else {
         continue;
       }
