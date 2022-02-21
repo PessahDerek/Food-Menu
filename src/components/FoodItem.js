@@ -87,7 +87,7 @@ const formButton = {
 const usedIds = []
 function createId(){
     let min = Math.ceil(1);
-    let max = Math.floor(20);
+    let max = Math.floor(200);
     return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -99,21 +99,39 @@ function FoodItem(props) {
     }
     
     function activate(){
-        const totalIs = props.foodPrice * unit;
-        const id = createId();
-        if (usedIds.includes(id)){
-            activate();
-        } else {
-            const trayArray = {
-            "food": props.foodName,
-            "price": props.foodPrice,
-            "quantity": unit,
-            "total": totalIs,
-            "id": id,
+        if (unit < 1){
+            const totalIs = Number(props.foodPrice) * 1;
+            const id = createId();
+            if (usedIds.includes(id)){
+                activate();
+            } else {
+                const trayArray = {
+                "food": props.foodName,
+                "price": props.foodPrice,
+                "quantity": 1,
+                "total": totalIs,
+                "id": id,
+                }
+                data.myTray.push(trayArray);
             }
-            data.myTray.push(trayArray);
+            console.log(data.myTray);
+        }else{
+            const totalIs = props.foodPrice * unit;
+            const id = createId();
+            if (usedIds.includes(id)){
+                activate();
+            } else {
+                const trayArray = {
+                "food": props.foodName,
+                "price": props.foodPrice,
+                "quantity": unit,
+                "total": totalIs,
+                "id": id,
+                }
+                data.myTray.push(trayArray);
+            }
+            console.log(data.myTray);
         }
-        console.log(data.myTray);
     }
     return (
         <div style={foodItemStyle}>

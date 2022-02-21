@@ -42,7 +42,7 @@ function Checkout(props) {
   }else {
     return <div className="page">
       {widget.map(
-        (item) => <CheckList key={item['id']} id={item['id']} handleDelete={handleDelete}  food={item['food']} price={item['price']} quant={item['quantity']} />
+        (item) => <CheckList key={item['id']} id={item['id']} handleDelete={handleDelete}  food={item['food']} price={item['price']} quant={item['quantity']} total={item['total']} />
       )}
       <OrderBtn />
     </div>;
