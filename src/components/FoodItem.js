@@ -29,40 +29,49 @@ const menu =
 const foodItemStyle = {
     width: "90%",
     height: "25vmax",
-    backgroundColor: "white",
+    backgroundColor: "transparent",
     margin: "5%",
     position: "relative",
     boxShadow: "2px 4px 8px #0002",
     display: "flex",
 }
 const foodImgStyle = {
-    width: "48%",
+    width: "45%",
     padding: "0",
     height: "80%",
-    backgroundColor: "white",
+    backgroundColor: "transparent",
     border: "none",
     borderRadius: "15px",
     margin: "1%",
+    display: "flex",
+    justifyContent: "center",
 }
 const menuInputStyle = {
     border: "none",
     borderBottom: "1px orangered solid",
     outline: "none",
+    color: "#51F97B",
+    fontSize: "3vh",
     backgroundColor: "transparent",
     height: "3vmax",
     textAlign: 'center',
     width: '90%',
-    marginLeft: "4%",
+    width: "100%"
 }
 const menuInputStyleAct = {
     border: "1px skyblue solid",
     width: "90%",
     height: "3vmax",
     marginLeft: "2%",
-    textAlign: "center"
+    textAlign: "center",
+    backgroundColor: "transparent",
+    border: '1px white solid',
+    color: "white",
+    fontSize: '1.4em',
+    letterSpacing: "0.5vh"
 }
 const formStyle = {
-    width: "50%",
+    width: "54%",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -77,7 +86,7 @@ const menuInputStyleActive = {
 }
 const formButton = {
     marginTop: "10%",
-    height: "3vmax",
+    height: "5vmax",
     border: "none",
     backgroundColor: "orangered",
     color: "white",
@@ -136,7 +145,7 @@ function FoodItem(props) {
     return (
         <div style={foodItemStyle}>
             <img style={foodImgStyle} src={menu[props.foodImage]}></img>
-            <form style={formStyle}>
+            <form className="foodItemForm" style={formStyle}>
                 <input style={menuInputStyle} disabled type="text" value={props.foodName}/>
                 <label htmlFor="price">Price</label>
                 <input style={menuInputStyleAct} disabled type="number" value={props.foodPrice}/>

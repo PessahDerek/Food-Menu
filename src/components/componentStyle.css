@@ -4,7 +4,7 @@
     margin: 5%;
     height: 25vh;
     position: relative;
-    background-color: #fdf6f3;
+    background-color: transparent;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.185);
 }
 .checkoutList button {
@@ -39,4 +39,9 @@
     outline: none;
     border: none;
     background-color: transparent;
+}
+.foodItemForm label{
+    text-align: left;
+    font-size: 1.2em;
+    color: #F3AB02;
 }

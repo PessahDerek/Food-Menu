@@ -19,8 +19,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="navBar">
-          <div className="actions"> 
-            <h2>Welcome to Hajini</h2>
+          <div className="restName"> 
+            <h1>Kenantra</h1>
           </div>
           <div className="foodGroups">
             <Link to="">Beverage</Link>
